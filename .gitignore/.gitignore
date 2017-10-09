@@ -1,6 +1,6 @@
 .jar
-target/
-out
+*/target
+*/out
 .settings
 .classpath
 .project
