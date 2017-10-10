@@ -1,13 +1,12 @@
-package reducer;
+package combiner;
 
 import custom_type.IpTextWriteble;
 import org.apache.hadoop.io.IntWritable;
-import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Reducer;
 
 import java.io.IOException;
 
-public class ByteReducer extends Reducer<IntWritable, IpTextWriteble, Text, Text> {
+public class ByteCombiner extends Reducer<IntWritable , IpTextWriteble, IntWritable , IpTextWriteble> {
 
     @Override
     public void reduce(IntWritable key, Iterable<IpTextWriteble> values, Context context)
@@ -16,12 +15,12 @@ public class ByteReducer extends Reducer<IntWritable, IpTextWriteble, Text, Text
         int count = 0;
 
         for (IpTextWriteble value : values) {
+
             count += value.getFirst();
             total += value.getSecond();
         }
 
-        double avg = total / count;
-        context.write(new Text("ip " + key) , new Text(avg + "," + total));
+        context.write(key, new IpTextWriteble(count, total));
     }
 
 }

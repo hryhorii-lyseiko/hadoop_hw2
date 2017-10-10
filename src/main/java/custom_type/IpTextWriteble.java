@@ -1,38 +1,45 @@
 package custom_type;
 
-import org.apache.hadoop.io.Writable;
+
+import org.apache.hadoop.io.WritableComparable;
 
 
 import java.io.DataInput;
 import java.io.DataOutput;
 import java.io.IOException;
 
-public class IpTextWriteble implements Writable {
+public class IpTextWriteble  implements WritableComparable<IpTextWriteble> {
 
-    private int count;
-    private int total;
+
+
+    private int first;
+    private int second;
 
     public IpTextWriteble() {
     }
 
+    public IpTextWriteble(IpTextWriteble v) {
+        this.first = v.first;
+        this.second = v.second;
+    }
 
     public IpTextWriteble(int first, int second) {
         set(first, second);
     }
 
-    public void set(int count, int second) {
-        this.count = count;
-        this.total = second;
+    public void set(int first, int second) {
+        this.first = first;
+        this.second = second;
     }
 
     public void write(DataOutput out) throws IOException {
-        out.writeInt(count);
-        out.writeInt(total);
+        out.writeInt(first);
+        out.writeInt(second);
     }
 
     public void readFields(DataInput in) throws IOException {
-        count = in.readInt();
-        total = in.readInt();
+        first = in.readInt();
+        second = in.readInt();
     }
 
 
@@ -43,34 +50,51 @@ public class IpTextWriteble implements Writable {
         IpTextWriteble other = (IpTextWriteble) o;
 
 
-        return (this.count == other.count && this.total == other.total);
+        return (this.first == other.first && this.second == other.second);
     }
 
     @Override
     public int hashCode() {
-        return count;
+        return first;
     }
 
+
+
+    public int compareTo(IpTextWriteble o) {
+        int thisFirstValue = this.first;
+        int thatFirstValue = o.first;
+        int thisSecondValue = this.second;
+        int thatSecondValue = o.second;
+
+        if (thisFirstValue < thatFirstValue)
+            return -1;
+
+        if (thisFirstValue > thatFirstValue)
+            return 1;
+
+        return (thisSecondValue < thatSecondValue ? -1 : (thisSecondValue == thatSecondValue ? 0 : 1));
+
+    }
 
     @Override
     public String toString() {
-        return Integer.toString(count) + "," + Integer.toString(total);
+        return Integer.toString(first) + "," + Integer.toString(second);
     }
 
-    public int getCount() {
-        return count;
+    public int getFirst() {
+        return first;
     }
 
-    public void setCount(int count) {
-        this.count = count;
+    public void setFirst(int first) {
+        this.first = first;
     }
 
-    public int getTotal() {
-        return total;
+    public int getSecond() {
+        return second;
     }
 
-    public void setTotal(int total) {
-        this.total = total;
+    public void setSecond(int second) {
+        this.second = second;
     }
 
 }
