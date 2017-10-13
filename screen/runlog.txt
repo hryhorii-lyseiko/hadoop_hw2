@@ -1,0 +1,110 @@
+[root@sandbox ~]# hadoop jar /root/hw2/hw2.jar AppDriver hw2in hw2out seq
+17/09/24 05:43:34 INFO impl.TimelineClientImpl: Timeline service address: http://sandbox.hortonworks.com:8188/ws/v1/timeline/
+17/09/24 05:43:34 INFO client.RMProxy: Connecting to ResourceManager at sandbox.hortonworks.com/172.17.0.2:8050
+17/09/24 05:43:34 INFO client.AHSProxy: Connecting to Application History server at sandbox.hortonworks.com/172.17.0.2:10200
+17/09/24 05:43:34 WARN mapreduce.JobResourceUploader: Hadoop command-line option parsing not performed. Implement the Tool interface and execute your application with ToolRunner to remedy this.
+17/09/24 05:43:35 INFO input.FileInputFormat: Total input paths to process : 1
+17/09/24 05:43:35 INFO lzo.GPLNativeCodeLoader: Loaded native gpl library
+17/09/24 05:43:35 INFO lzo.LzoCodec: Successfully loaded & initialized native-lzo library [hadoop-lzo rev 7a4b57bedce694048432dd5bf5b90a6c8ccdba80]
+17/09/24 05:43:35 INFO mapreduce.JobSubmitter: number of splits:1
+17/09/24 05:43:35 INFO mapreduce.JobSubmitter: Submitting tokens for job: job_1505830055196_0035
+17/09/24 05:43:35 INFO impl.YarnClientImpl: Submitted application application_1505830055196_0035
+17/09/24 05:43:35 INFO mapreduce.Job: The url to track the job: http://sandbox.hortonworks.com:8088/proxy/application_1505830055196_0035/
+17/09/24 05:43:35 INFO mapreduce.Job: Running job: job_1505830055196_0035
+17/09/24 05:43:41 INFO mapreduce.Job: Job job_1505830055196_0035 running in uber mode : false
+17/09/24 05:43:41 INFO mapreduce.Job:  map 0% reduce 0%
+17/09/24 05:43:45 INFO mapreduce.Job:  map 100% reduce 0%
+17/09/24 05:43:51 INFO mapreduce.Job:  map 100% reduce 100%
+17/09/24 05:43:52 INFO mapreduce.Job: Job job_1505830055196_0035 completed successfully
+17/09/24 05:43:53 INFO mapreduce.Job: Counters: 84
+        File System Counters
+                FILE: Number of bytes read=9407
+                FILE: Number of bytes written=308869
+                FILE: Number of read operations=0
+                FILE: Number of large read operations=0
+                FILE: Number of write operations=0
+                HDFS: Number of bytes read=2924159
+                HDFS: Number of bytes written=29479
+                HDFS: Number of read operations=6
+                HDFS: Number of large read operations=0
+                HDFS: Number of write operations=2
+        Job Counters
+                Launched map tasks=1
+                Launched reduce tasks=1
+                Data-local map tasks=1
+                Total time spent by all maps in occupied slots (ms)=2555
+                Total time spent by all reduces in occupied slots (ms)=3411
+                Total time spent by all map tasks (ms)=2555
+                Total time spent by all reduce tasks (ms)=3411
+                Total vcore-milliseconds taken by all map tasks=2555
+                Total vcore-milliseconds taken by all reduce tasks=3411
+                Total megabyte-milliseconds taken by all map tasks=638750
+                Total megabyte-milliseconds taken by all reduce tasks=852750
+        Map-Reduce Framework
+                Map input records=13501
+                Map output records=13080
+                Map output bytes=239377
+                Map output materialized bytes=9403
+                Input split bytes=116
+                Combine input records=13080
+                Combine output records=1590
+                Reduce input groups=1590
+                Reduce shuffle bytes=9403
+                Reduce input records=1590
+                Reduce output records=1590
+                Spilled Records=3180
+                Shuffled Maps =1
+                Failed Shuffles=0
+                Merged Map outputs=1
+                GC time elapsed (ms)=169
+                CPU time spent (ms)=2270
+                Physical memory (bytes) snapshot=352272384
+                Virtual memory (bytes) snapshot=3911806976
+                Total committed heap usage (bytes)=155189248
+        Shuffle Errors
+                BAD_ID=0
+                CONNECTION=0
+                IO_ERROR=0
+                WRONG_LENGTH=0
+                WRONG_MAP=0
+                WRONG_REDUCE=0
+        eu.bitwalker.useragentutils.Browser
+                APPLE_WEB_KIT=263
+                BOT=2259
+                BOT_MOBILE=1
+                CFNETWORK=68
+                CHROME=26
+                CHROME10=1323
+                CHROME11=113
+                CHROME12=38
+                CHROME8=10
+                CHROME9=3
+                DOWNLOAD=5
+                FIREFOX1_5=1
+                FIREFOX2=29
+                FIREFOX3=2840
+                FIREFOX4=2618
+                IE=12
+                IE5=5
+                IE5_5=10
+                IE6=201
+                IE7=373
+                IE8=1162
+                IE9=197
+                KONQUEROR=11
+                MOBILE_SAFARI=258
+                MOZILLA=76
+                OPERA=5
+                OPERA10=103
+                OPERA11=105
+                OPERA9=6
+                OPERA_MINI=24
+                OUTLOOK2007=2
+                SAFARI4=24
+                SAFARI5=635
+                SEAMONKEY=55
+                UNKNOWN=219
+        File Input Format Counters
+                Bytes Read=2924043
+        File Output Format Counters
+                Bytes Written=29479

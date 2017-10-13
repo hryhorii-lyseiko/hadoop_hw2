@@ -47,8 +47,7 @@ public class MRTest  {
     @Test
     public void testMapper() throws IOException {
         final String testLine = "ip3 - - [24/Apr/2011:04:22:45 -0400] \"GET /personal/vanagon_1.jpg HTTP/1.1\" 200 72209 \"http://www.inetgiant.in/addetails/1985-vw-vanagon-transporter-single-cab-sinka-diesel-truck-2wd-rhd/3235819\" \"Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.0; WOW64; Trident/4.0; SLCC1; .NET CLR 2.0.50727; Media Center PC 5.0; .NET CLR 3.5.30729; .NET CLR 3.0.30729; .NET4.0C)\"";
-        mapDriver.withInput(new LongWritable(0), new Text(
-                testLine));
+        mapDriver.withInput(new LongWritable(0), new Text(testLine));
         mapDriver.withOutput(new IntWritable(3), new IpTextWriteble(1 , 72209));
         mapDriver.runTest();
     }
